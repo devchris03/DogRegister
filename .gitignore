@@ -1,0 +1,5 @@
+# ignora la carpeta package-json.lock
+package-json.lock
+
+#ignora la carpeta node_modules
+node_modules
