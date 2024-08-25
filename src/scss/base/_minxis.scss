@@ -25,3 +25,18 @@
         @content;
     }
 }
+
+@mixin btn($color, $bg) {
+    padding: .625rem .5rem;
+    border-radius: .5rem;
+    color: $color;
+    background: $bg;
+    border: 1px solid v.$purple;
+    font-weight: 700;
+    font-family: v.$fontSecundary;
+    font-size: 1rem;
+    cursor: pointer;
+
+    @content
+}
+
