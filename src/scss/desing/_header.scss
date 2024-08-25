@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+@use '../base/minxis' as m;
+
+.header {
+    padding-block: 1rem;
+    background: v.$purple;
+    color: v.$white;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-family: v.$fontSecundary;
+        font-size: .875rem;
+    }
+
+    @include m.desk {
+        padding-block: 2rem;
+
+        &__name {
+            font-size: 1rem;
+        }
+    }
+}
+
