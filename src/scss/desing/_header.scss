@@ -2,7 +2,6 @@
 @use '../base/minxis' as m;
 
 .header {
-    grid-area: header;
     padding-block: 1rem;
     background: v.$purple;
     color: v.$white;
@@ -20,7 +19,15 @@
     }
 
     @include m.desk {
+        grid-column: 1 / -1;
+        grid-row: 1;
         padding-block: 2rem;
+
+        &__content {
+            max-inline-size: none;
+            padding-inline: 3rem;
+            margin: 0 auto;
+        }
 
         &__name {
             font-size: 1rem; 

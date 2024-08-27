@@ -1,0 +1,22 @@
+@use '../base/variables' as v;
+@use '../base/minxis' as m;
+
+.layout {
+    @include m.desk {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr;
+        block-size: 100vh;
+        background: url('../img/perrito.png');
+        background-position: left bottom;
+        background-size: 35% 90%;
+        background-repeat: no-repeat;
+        background-color: v.$purple;
+    }
+}
+
+.main {
+    grid-column: 2;
+    grid-row: 2;
+    background: v.$pink;
+}
