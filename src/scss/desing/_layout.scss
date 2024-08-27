@@ -1,0 +1,24 @@
+@use '../base/variables' as v;
+@use '../base/minxis' as m;
+
+.layout {
+    @include m.desk {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: "header header" ". form";
+        block-size: 100vh;
+
+    }
+}
+
+.main {
+    grid-area: form;
+    background: v.$pink;
+    
+
+    @include m.desk {
+        outline: 1px solid red;
+    }
+
+}

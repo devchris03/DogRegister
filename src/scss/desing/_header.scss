@@ -2,6 +2,7 @@
 @use '../base/minxis' as m;
 
 .header {
+    grid-area: header;
     padding-block: 1rem;
     background: v.$purple;
     color: v.$white;
@@ -22,8 +23,9 @@
         padding-block: 2rem;
 
         &__name {
-            font-size: 1rem;
+            font-size: 1rem; 
         }
+
     }
 }
 
