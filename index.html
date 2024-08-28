@@ -32,14 +32,15 @@
                 </div> <!-- campo -->
                 <div class="form__campo">
                     <label for="inputMessage" class="form__label">Mensaje:</label>
-                    <textarea name="message" id="inputMessage" value="Escribe tu mensaje" class="form__textarea" cols="10" rows="5"></textarea>
+                    <textarea name="message" id="inputMessage" class="form__textarea" required cols="10" rows="5" placeholder="Escribe tu mensaje"></textarea>
                 </div> <!-- campo -->
                 <div class="form__buttons">
-                    <input type="button" class="form__buttonReset" value="Limpiar formulario" aria-label="Limpiar campos de todos los formularios">
-                    <input type="button" class="form__buttonSend" value="Enviar" aria-label="Enviar Formulario">
+                    <input type="button" id="buttonClean" class="form__buttonReset" value="Limpiar formulario" aria-label="Limpiar campos de todos los formularios">
+                    <input type="button" id="buttonSend" class="form__buttonSend" disabled value="Enviar" aria-label="Enviar Formulario">
                 </div>
             </form>
         </div>
     </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>

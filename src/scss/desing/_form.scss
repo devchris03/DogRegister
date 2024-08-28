@@ -41,11 +41,29 @@
     }
 
     &__buttonReset{
-        @include m.btn(v.$purple, v.$white)
+        @include m.btn(v.$purple, v.$white);
+        position: relative;
     }
 
     &__buttonSend{
-        @include m.btn(v.$white, v.$purple)
+        @include m.btn(v.$white, v.$purple);
+        
+        &:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+
+            &:hover::before {
+                content: 'sisi';
+                display: block;
+            }
+        }
+    }
+
+    &__error {
+        background: rgb(216, 59, 59);
+        color: white;
+        margin: 0;
+        padding: .5rem;
     }
 
     @include m.tablet {
