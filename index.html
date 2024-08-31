@@ -20,22 +20,26 @@
     </header>
     <main class="main">
         <div class="main__content wrapper" role="form">
-            <h1 class="title">Asegúrese de que su cachorro recibe los mejores cuidados</h1>
+            <h1 class="title">Asegúrese de que su cachorro reciba los mejores cuidados</h1>
             <form action="" id="form" class="form">
                 <div class="form__campo">
-                    <label for="inputName" class="form__label">Nombre:</label>
-                    <input type="text" placeholder="Ingresa tu nombre" required id="inputName" name="name" class="form__input">
+                    <label for="nombre" class="form__label">Nombre de la mascota:</label>
+                    <input type="text" placeholder="Ingresa tu nombre" required id="nombre" name="nombre" autocomplete="none" class="form__input">
                 </div> <!-- campo -->
                 <div class="form__campo">
-                    <label for="inputEmail" class="form__label">Email:</label>
-                    <input type="email" placeholder="Ingresa tu email" required id="inputEmail" name="email" class="form__input">
+                    <label for="email" class="form__label">Correo electrónico:</label>
+                    <input type="email" placeholder="Ingresa tu email, Ej: ej@ejem.com" required id="email" name="email" autocomplete="email" class="form__input">
                 </div> <!-- campo -->
                 <div class="form__campo">
-                    <label for="inputMessage" class="form__label">Mensaje:</label>
-                    <textarea name="message" id="inputMessage" class="form__textarea" required cols="10" rows="5" placeholder="Escribe tu mensaje"></textarea>
+                    <label for="email2" class="form__label">Correo electrónico alternativo:</label>
+                    <input type="email" placeholder="Ingresa tu email, Ej: ej@ejem.com" id="email2" name="email" autocomplete="email" class="form__input">
+                </div> <!-- campo -->
+                <div class="form__campo">
+                    <label for="descripcion" class="form__label">Descripción de la Mascota:</label>
+                    <textarea name="descripción" id="descripcion" class="form__textarea" required cols="10" rows="5" placeholder="Escribe tu mensaje"></textarea>
                 </div> <!-- campo -->
                 <div class="form__buttons">
-                    <input type="button" id="buttonClean" class="form__buttonReset" value="Limpiar formulario" aria-label="Limpiar campos de todos los formularios">
+                    <input type="button" id="buttonClean" class="form__buttonReset" value="Resetear" aria-label="Limpiar campos de todos los formularios">
                     <input type="button" id="buttonSend" class="form__buttonSend" disabled value="Enviar" aria-label="Enviar Formulario">
                 </div>
             </form>

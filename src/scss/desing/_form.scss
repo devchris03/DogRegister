@@ -60,10 +60,14 @@
     }
 
     &__error {
-        background: rgb(216, 59, 59);
-        color: white;
+        color: red;
         margin: 0;
-        padding: .5rem;
+        padding-inline-start: .5rem;
+        font-size: .875rem;
+    }
+
+    &__campError {
+        border: 1px solid red;
     }
 
     @include m.tablet {

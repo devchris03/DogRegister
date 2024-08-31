@@ -1,56 +1,82 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const inputName = document.querySelector('#inputName');
-    const inputEmail = document.querySelector('#inputEmail');
-    const inputMessage = document.querySelector('#inputMessage');
-    const buttonClean = document.querySelector('#buttonClean');
-    const buttonSend = document.querySelector('#buttonSend');
+    const name = document.querySelector('#nombre'); 
+    const email = document.querySelector('#email'); 
+    const email2 = document.querySelector('#email2'); 
+    const description = document.querySelector('#descripcion');
 
-    
+    name.addEventListener('blur', validate);
+    email.addEventListener('blur', validate);
+    email2.addEventListener('blur', validateEmail);
+    description.addEventListener('blur', validate);
 
-    inputName.addEventListener('blur', (event) => {
-        const value = event.target.value.trim();
-        const regex = /^[a-zA-z]+$/;
 
-        if(value) {
-            console.log('valor ingresado')
-            if(regex.test(value)){
-                console.log('valor correcto')
+    // valida los campos
+    function validate(event) {
+        const campName = event.target.id;
+        const reference = event.target.parentElement;
+        const camp = event.target;
 
-            } else {
-                console.log('el campo solo admite letras')
-            }
-
-        } else {
-            console.log('es obligatorio llenar el campo')
+        if(event.target.value.trim() == '') {
+            showAlert(`El campo ${campName} es obligatorio`, reference, camp);
+            return;
         }
-    })
 
-    inputEmail.addEventListener('blur', (event) => {
-        const value = event.target.value.trim();
-
-        if(value) {
-            if(value.includes('@')){
-                console.log('email correcto')
-
-            } else {
-                console.log('email no admitido')
-            }
-
-        } else {
-            console.log('es obligatorio llenar el campo')
+        if(event.target.id == 'email') {
+            validateEmail(event);
+            return
         }
-    });
 
-    inputMessage.addEventListener('blur', (event) => {
-        const value = event.target.value.trim();
-        
-        if(value) {
-            console.log('mensaje')
+        cleanAlert(reference, camp)
+    }
 
-        } else {
-            console.log('es obligatorio llenar el campo')
+
+
+    // muestra alerta
+    function showAlert(msgAlert, reference, camp) {
+
+        // confirma si ya existe una alerta
+        cleanAlert(reference, camp);
+
+
+        const alert = document.createElement('P');
+        alert.textContent = msgAlert;
+        alert.classList.add('form__error');
+        camp.classList.add('form__campError');
+        reference.appendChild(alert);
+    }
+
+
+
+    // elimina alerta 
+    function cleanAlert(reference, camp) {
+        const exist = reference.querySelector('.form__error');
+        if(exist) {
+            exist.remove()
+            camp.classList.remove('form__campError')
         }
-    })
+    }
 
-    
+
+
+    // valida si los valores ingresados a los campos email son correctos
+    function validateEmail(event) {
+        const value = event.target.value;
+        const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        const result = regex.test(value);
+        const camp = event.target;
+        const reference = event.target.parentElement;
+
+
+        if(event.target.value.trim() !== '' && !result) {
+            showAlert(`El email es invalido, por favor verifique o intente de nuevo`,reference, camp)
+            return;
+        }
+
+        if(event.target.value.trim() !== '' && result || event.target.value.trim() == '') {
+            cleanAlert(reference, camp);
+            return;
+        }
+
+
+    }
 })
