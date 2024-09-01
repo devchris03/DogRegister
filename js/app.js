@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // muestra alerta
+    // muestra alerta en caso de error
     function showAlert(msgAlert, reference, field) {
 
         // confirma si ya existe una alerta
