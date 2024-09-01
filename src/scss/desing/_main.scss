@@ -7,7 +7,15 @@
         grid-template-columns: 1fr 2fr;
         grid-template-rows: auto 1fr;
         block-size: 100vh;
-        background: url('../img/perrito.png');
+        @supports(background-image: url('../img/dog.png')) {
+            background-image: url('../img/dog.png');
+        }
+        @supports(background-image: url('../img/dog.webp')) {
+            background-image: url('../img/dog.webp');
+        }
+        @supports(background-image: url('../img/dog.avif')) {
+            background-image: url('../img/dog.avif');
+        }
         background-position: left bottom;
         background-size: 35% 90%;
         background-repeat: no-repeat;
@@ -19,4 +27,5 @@
     grid-column: 2;
     grid-row: 2;
     background: v.$pink;
+    position: relative;
 }

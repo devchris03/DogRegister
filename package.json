@@ -29,6 +29,9 @@
     "gulp-ttf2woff": "^2.0.0",
     "gulp-ttf2woff2": "^5.0.0",
     "gulp-webp": "^5.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
     "postcss": "^8.4.41",
     "sass": "^1.77.8"
   }
